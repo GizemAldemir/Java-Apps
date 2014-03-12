@@ -1,0 +1,106 @@
+package GizemsFolder;
+
+import java.util.Scanner; //Kullanıcıya veri girişi yaptırmak için Scanner classını import etmemiz gerekiyor.
+public class SimpleCalculatorApp {
+
+	public static void main(String[] args) {
+		
+	Scanner input = new Scanner(System.in); //Import isleminnden sonra Scanner nesnesi oluşturmamuz gerekiyor.
+	float number1,number2; //Hesap makinesini iki sayı icin oluşturdum ve tip olarak floatı sectim.
+	float sum,subt,div,mult;
+	int option=0;
+	
+	/*Eger ide olarak Eclipse kullanıyorsanız syso yazıp ctrl+space yaptığınızda 
+	  System.out.println(); kalıbı otomatik olarak gelecektir. İdeniz NetBeans ise sout yazıp 
+	  tab tusuna basmanız yeterli olacaktır.
+	 */
+	System.out.println("Hello. Welcome Gizem's Calculator...");
+	System.out.println("Please enter first number : ");
+	number1 = input.nextFloat(); //input yerine keyboard, klayvye ya da istediginiz bir keywordü girebilirsiniz. 
+	System.out.println("Enter second number : ");
+	number2 = input.nextFloat();
+	
+	System.out.println("~~~~MENU~~~~");
+    System.out.print("Press 1 for Summation\n");
+    System.out.print("Press 2 for Subtraction\n");
+    System.out.print("Press 3 for Division\n");
+    System.out.print("Press 4 for Multiplication\n");
+    System.out.print("Press 5 for Exit\n");
+    System.out.println("~~~~~~~~~~~~");
+    System.out.print("Enter your choice : ");
+    option = input.nextInt();
+    
+	while(option!=1 && option!= 2 && option!=3 && option!= 4 && option!= 5 )//Menudekilerden baska sayı girilemesin diye kontrol yaptık.
+	{
+    System.out.println("You entered wrong choice! Try again...");
+	System.out.println("~~~~MENU~~~~");
+    System.out.print("Press 1 for Summation\n");
+    System.out.print("Press 2 for Subtraction\n");
+    System.out.print("Press 3 for Division\n");
+    System.out.print("Press 4 for Multiplication\n");
+    System.out.print("Press 5 for Exit\n");
+    System.out.println("~~~~~~~~~~~~");
+    System.out.print("Enter your choice : ");
+    option = input.nextInt();
+	}
+    
+    switch(option)
+    {
+    
+      case 1:
+      {
+    	sum=number1+number2;
+    	System.out.print("Summation : \n"+sum);
+    	break;
+      }
+      
+      case 2:
+      {
+    	  subt=number1-number2;
+    	  System.out.print("Subtraction : \n"+subt);
+    	  break;
+      }
+      
+      case 3:
+      {
+    	  div=number1/number2;
+    	  System.out.print("Division : \n"+div);
+    	  break;
+      }
+      
+      case 4:
+      {
+    	  mult=number1*number2;
+    	  System.out.print("Multiplication : \n"+mult);
+    	  break;
+      }
+      
+      case 5:
+    	  
+      { System.out.println("Thanks for using program...");
+          try {
+          Thread.sleep(1000);    //Sleep metodu sistemi bekletmek amaclı kullanılır. Programa gercekcilik katmak adına ekledim.
+         } 
+          catch(InterruptedException ex) {
+          Thread.currentThread().interrupt();
+          }
+          
+          return;
+      }
+      
+      default :
+    	  return;
+    
+    }
+	
+	
+	
+	
+	
+	
+   
+	
+		
+	}
+
+}
